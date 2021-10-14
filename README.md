@@ -1,6 +1,6 @@
 # Secure implementations on microcontrollers (WS 21/22)
 
-In this repository the materials for the course "Sichere Implementierungen auf Mikrocontrollern" teached at Hochschule Augsburg in WS 2020/2021 can be found.
+In this repository the materials for the course "Sichere Implementierungen auf Mikrocontrollern" teached at Hochschule Augsburg in WS 2021/2022 can be found.
 
 
 ## How to install
@@ -17,12 +17,12 @@ In this repository the materials for the course "Sichere Implementierungen auf M
 3. Type in the first cell and execute:
 
 ```jupyter
-! git clone https://github.com/hackenbergstefan/securec_ws2021.git
+! git clone https://gitlab.elektrotechnik.hs-augsburg.de/hackenbs/securec-ws2122.git
 ```
 4. In the second cell:
 
 ```jupyter
-pip install -e securec_ws2021
+pip install -e securec-ws2122
 ```
 
 5. That's it. Now you can use the lecture notebooks.
@@ -34,7 +34,7 @@ pip install -e securec_ws2021
 3. Type in the first cell and execute:
 
 ```jupyter
-! cd securec_ws2021 && git pull
+! cd securec-ws2122 && git pull
 ```
 
 
