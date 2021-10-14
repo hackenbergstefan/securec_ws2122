@@ -1,4 +1,4 @@
-# Secure implementations on microcontrollers (WS 20/21)
+# Secure implementations on microcontrollers (WS 21/22)
 
 In this repository the materials for the course "Sichere Implementierungen auf Mikrocontrollern" teached at Hochschule Augsburg in WS 2020/2021 can be found.
 
