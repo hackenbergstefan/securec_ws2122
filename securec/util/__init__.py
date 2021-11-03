@@ -20,7 +20,7 @@ def exit():
 def init():
     exit()
     config.scope = cw.scope()
-    config.target = cw.target(config.scope)
+    config.target = cw.target(config.scope, target_type=cw.targets.SimpleSerial2)
     return config.scope, config.target
 
 

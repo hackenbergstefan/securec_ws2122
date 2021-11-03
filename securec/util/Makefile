@@ -43,7 +43,7 @@ endif
 # Header files (.h) are automatically pulled in.
 SRC += $(TARGET).c
 
-SS_VER = SS_VER_1_1
+SS_VER = SS_VER_2_1
 
 #Add simpleserial project to build
 include $(FIRMWAREPATH)/simpleserial/Makefile.simpleserial
