@@ -9,18 +9,18 @@ from .. import config
 
 
 def exit():
-    if config.target is not None:
-        config.target.dis()
-        config.target = None
     if config.scope is not None:
+        config.target.dis()
         config.scope.dis()
+        cw.util.DisableNewAttr._read_only_attrs.clear()
+        config.target = None
         config.scope = None
 
 
 def init():
-    exit()
-    config.scope = cw.scope()
-    config.target = cw.target(config.scope, target_type=cw.targets.SimpleSerial2)
+    if config.scope is None:
+        config.scope = cw.scope()
+        config.target = cw.target(config.scope, target_type=cw.targets.SimpleSerial2)
     return config.scope, config.target
 
 

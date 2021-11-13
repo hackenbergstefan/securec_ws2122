@@ -10,7 +10,7 @@
 /**
  * RSA exponentation on uint8_t integers.
  */
-uint8_t rsa_uint8(uint8_t *input)
+uint8_t rsa_uint8(uint8_t cmd, uint8_t scmd, uint8_t input_length, uint8_t* input)
 {
     uint8_t message = input[0],
         exponent = input[1],
@@ -35,7 +35,7 @@ uint8_t rsa_uint8(uint8_t *input)
 
     trigger_low();
 
-    simpleserial_put('r', sizeof(uint8_t), &result);
+    simpleserial_put(0x01, 1, &result);
     return 0;
 }
 
@@ -46,7 +46,7 @@ int main(void)
     trigger_setup();
 
     simpleserial_init();
-    simpleserial_addcmd('r', 3 * sizeof(uint8_t), rsa_uint8);
+    simpleserial_addcmd(0x01, 3, rsa_uint8);
     while(1)
         simpleserial_get();
 }
