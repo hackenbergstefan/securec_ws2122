@@ -8,7 +8,7 @@
 
 static const uint8_t stored_password[] = "infineon";
 
-uint8_t check_password(uint8_t cmd, uint8_t scmd, uint8_t input_length, uint8_t* input)
+uint8_t check_password(uint8_t cmd, uint8_t scmd, uint8_t input_length, uint8_t *input)
 {
     trigger_high();
 
@@ -17,7 +17,7 @@ uint8_t check_password(uint8_t cmd, uint8_t scmd, uint8_t input_length, uint8_t*
     {
         uint8_t stored = stored_password[i];
         uint8_t attempt = input[i];
-        password_wrong = stored ^ attempt;
+        password_wrong |= stored ^ attempt;
     }
 
     trigger_low();
@@ -33,7 +33,7 @@ int main(void)
     trigger_setup();
 
     simpleserial_init();
-    simpleserial_addcmd(0x01, 10, check_password);
-    while(1)
+    simpleserial_addcmd(0x01, 8, check_password);
+    while (1)
         simpleserial_get();
 }
