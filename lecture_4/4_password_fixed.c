@@ -33,7 +33,7 @@ int main(void)
     trigger_setup();
 
     simpleserial_init();
-    simpleserial_addcmd(0x01, 10, check_password);
+    simpleserial_addcmd(0x01, 8, check_password);
     while (1)
         simpleserial_get();
 }
